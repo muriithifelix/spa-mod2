@@ -1,0 +1,275 @@
+
+:root {
+  font-family: Arial, sans-serif;
+  color: #20263a;
+  background: #f7f8fc;
+  --surface: #ffffff;
+  --text: #20263a;
+  --muted: #697386;
+  --accent: #0088ff;
+  --border: #f1c9c9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: inherit;
+  color: var(--text);
+  transition: background 0.25s, color 0.25s;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 8%;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+button, input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+#theme-btn {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+.container {
+  width: min(850px, 90%);
+  margin: 0 auto;
+}
+
+.hero {
+  text-align: center;
+  padding: 65px 0 30px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: clamp(32px, 6vw, 52px);
+  line-height: 1.15;
+  margin: 18px 0;
+}
+
+.subtitle, .muted {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+#search-form {
+  display: flex;
+  gap: 10px;
+  margin: 28px auto 12px;
+  max-width: 650px;
+}
+
+#word-input {
+  flex: 1;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+#search-btn, .primary-btn {
+  border: 0;
+  background: var(--accent);
+  color: white;
+  border-radius: 12px;
+  padding: 14px 22px;
+  font-weight: bold;
+}
+
+#search-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+#status {
+  min-height: 24px;
+  color: var(--muted);
+}
+
+#status.error {
+  color: #dc3545;
+}
+
+.word-card, .favorite-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 25px;
+  margin: 20px 0;
+  overflow-wrap: anywhere;
+}
+
+.word-heading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.word-heading h2 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.phonetic {
+  color: var(--accent);
+  margin: 10px 0;
+}
+
+.section-title {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+  margin-top: 28px;
+}
+
+.definition {
+  line-height: 1.7;
+  margin: 16px 0;
+}
+
+.part-of-speech {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.example {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+  color: var(--accent);
+  border-radius: 20px;
+  padding: 8px 12px;
+}
+
+.save-btn, .remove-btn, .audio-btn {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 10px 13px;
+}
+
+.saved {
+  background: #e8e7ff;
+  color: #4546b5;
+}
+
+.favorites-section {
+  padding: 30px 0 60px;
+}
+
+.favorite-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
+  margin: 12px 0;
+}
+
+.favorite-card h3 {
+  margin: 0 0 5px;
+}
+
+.favorite-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.favorite-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+footer {
+  text-align: center;
+  padding: 24px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+body.dark {
+  --surface: #202438;
+  --text: #f2f3fa;
+  --muted: #b5bbcd;
+  --accent: #a5a6ff;
+  --border: #373c52;
+  background: #151827;
+}
+
+body.dark .saved {
+  background: #34335e;
+  color: #d9d8ff;
+}
+
+@media (max-width: 520px) {
+  .header {
+    padding: 18px 5%;
+  }
+
+  .hero {
+    padding-top: 42px;
+  }
+
+  #search-form {
+    flex-direction: column;
+  }
+
+  #search-btn {
+    width: 100%;
+  }
+
+  .word-card {
+    padding: 18px;
+  }
+
+  .favorite-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
